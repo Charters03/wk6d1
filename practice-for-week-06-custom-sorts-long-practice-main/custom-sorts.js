@@ -20,16 +20,33 @@ function oddEvenSort(arr) {
       return 1;
     } else if (a % 2 !== 0) {
       return -1;
-    } 
-  }) 
+    }
+  })
 }
 
 function validAnagrams(s, t) {
   // Your code here
+  let arr1 = s.split('');
+  let arr2 = t.split('');
+
+  if (arr1.sort().join === arr2.sort().join) {
+    return true;
+  }
+  return false;
 }
 
 function reverseBaseSort(arr) {
   // Your code here
+  return arr.sort((a,b) => {
+    if (a.toString().length === b.toString().length) {
+     return a - b;
+    } else if (a.toString().length < b.toString().length) {
+      return 1;
+    } else if (a.toString().length > b.toString().length) {
+      return -1;
+    }
+    return 0;
+  })
 }
 
 function frequencySort(arr) {
